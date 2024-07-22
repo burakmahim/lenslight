@@ -25,7 +25,17 @@ const userSchema = new Schema({
         minlength: [4, 'At lest 4 characters'],
     },
 
+    followers: [ {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        },
+    ],
 
+    followings: [ {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        },
+    ],
 },
 {
     timestamps:true

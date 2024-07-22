@@ -40,7 +40,7 @@ const createPhoto = async (req, res) => {
 const getAllPhotos = async (req, res) => {
 
     try {
-            
+
         const photos = res.locals.user
       ? await Photo.find({ user: { $ne: res.locals.user._id } })
       : await Photo.find({});
@@ -48,10 +48,6 @@ const getAllPhotos = async (req, res) => {
       photos,
       link: 'photos',
     });
-            res.status(200).render("photos", {
-                photos,
-                link:"photos",
-            })
             
         
     } catch (error) {
