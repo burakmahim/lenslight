@@ -32,7 +32,7 @@ const photoSchema = new Schema({
 
     image_id: {
         type: String,
-    }
+      },
 
 })
 
